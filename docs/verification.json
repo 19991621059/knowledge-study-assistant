@@ -1,0 +1,184 @@
+{
+  "date": "2026-10-14",
+  "timezone": "Asia/Shanghai",
+  "checks": {
+    "backend": {
+      "passed": 20,
+      "warnings": 1
+    },
+    "browser": {
+      "passed": 2,
+      "provider": "可控模型夹具"
+    },
+    "build": "passed",
+    "ruff": "passed"
+  },
+  "actual_provider_api": {
+    "verified_at": "2026-10-14 03:10:06",
+    "provider_model": "glm-5.3-flash",
+    "steps": [
+      "独立服务登录",
+      "文件上传、示例导入、稳定身份与原文件下载",
+      "自配模型保存和真实连接测试",
+      "真实流式问答、引用定位与同一请求恢复",
+      "真实生成3题、逐字出处核对及待人工审核标识",
+      "参考练习、错题纠正、重复提交及收藏不确定记录",
+      "确定性学习计划、完成统计、阅读位置与无凭据备份"
+    ],
+    "documents": 2,
+    "chunks": 12,
+    "questions": 6,
+    "generated": {
+      "ids": [
+        "d400b7d7c1a777eabd58177f",
+        "c52e30757fbfbd61a43a794e",
+        "6b05667a39acc90d5aba0dc3"
+      ],
+      "created": 3,
+      "duplicates": 0,
+      "review_status": "待人工核对"
+    },
+    "source_locations": [
+      {
+        "document_id": "0ecd9206447d77ce10e3594a",
+        "chunk_id": "0ecd9206447d77ce10e3594a-2",
+        "page": 2,
+        "section": "三种备份方式"
+      }
+    ],
+    "stats": {
+      "read": 1,
+      "chunks": 12,
+      "practiced": 2,
+      "questions": 6,
+      "correct": 1,
+      "wrong": 1,
+      "attempts_today": 3,
+      "completed_today": 1
+    },
+    "plan": {
+      "id": "4051e425e2144dbd8152e7db48115053",
+      "days": 4,
+      "tasks": 10,
+      "end_date": "2026-10-17"
+    },
+    "limits": [
+      "出处定位不等于答案语义核验",
+      "AI题答案解析仍待人工核对",
+      "本脚本不代替浏览器、容器或原生设备验收"
+    ]
+  },
+  "actual_browser": {
+    "verified_at": "2026-10-13T19:26:10.592Z",
+    "live": true,
+    "browser": "155.0.8059.40",
+    "steps": [
+      "浏览器保存自配模型和真实连接测试",
+      "浏览器真实流式问答、出处展开及原文定位",
+      "浏览器真实生成3题与待核对标识",
+      "浏览器参考题作答、参考答案和原文出处",
+      "浏览器按剩余资料和题目创建计划并查看真实统计"
+    ],
+    "generated": {
+      "ids": [
+        "819288a2e9110714faabfa46",
+        "c679be495d0f09c74f4098e0",
+        "b63b1b25ba68d7109e223db7"
+      ],
+      "created": 3,
+      "duplicates": 0,
+      "review_status": "待人工核对"
+    }
+  },
+  "restart_and_empty_restore": {
+    "passed": true,
+    "comparison": "完整学习状态；学习备份排除模型凭据"
+  },
+  "fresh_install": {
+    "verified_at": "2026-10-14 03:33:44",
+    "commit": "136bb56935f57661465e5cc2d50ba1c0031775cf",
+    "steps": [
+      "独立Git克隆，无data/.venv/node_modules",
+      "README安装脚本真实运行",
+      "锁定依赖与生产构建",
+      "两次交互访问密码初始化",
+      "启动和真实同源页面",
+      "新库无预置进度、模型或凭据",
+      "登录、示例导入和原文件一致"
+    ],
+    "records": {
+      "documents": 1,
+      "questions": 3,
+      "read": 0,
+      "practiced": 0
+    }
+  },
+  "media": {
+    "gif": {
+      "width": 1080,
+      "height": 759,
+      "duration": "24.260000",
+      "nb_frames": "194"
+    },
+    "files": [
+      {
+        "path": "docs/images/demo.gif",
+        "bytes": 4390089,
+        "sha256": "1a2b0e9bec26197c25fb6262f599de808d611a671410b77826317c724c650edd"
+      },
+      {
+        "path": "docs/images/library.png",
+        "bytes": 79604,
+        "sha256": "dd1350158d7b754539a30fe551821ac74e960bac3b932403a812411fa6c052fd"
+      },
+      {
+        "path": "docs/images/mobile.png",
+        "bytes": 86277,
+        "sha256": "0198ed21638c6ddb4b2031bbd54a3e0d388c1206389c36b2f5f8492ba52c0f8b"
+      },
+      {
+        "path": "docs/images/plan.png",
+        "bytes": 112561,
+        "sha256": "30da908388a11f3d8ec9fbeee6eeef1e181f8dba1998d7e87313aac7da1ce760"
+      },
+      {
+        "path": "docs/images/practice.png",
+        "bytes": 159697,
+        "sha256": "cec992bffb2e9f3300872e1a6aa49b9ebc853964c889ce47bf7011679aee27ef"
+      },
+      {
+        "path": "docs/images/qa.png",
+        "bytes": 171056,
+        "sha256": "e7702cfd61302a400295a28a33454778879571b854063be9754fd2b09e359981"
+      },
+      {
+        "path": "docs/images/question.png",
+        "bytes": 130131,
+        "sha256": "2a45860005dcebd43f3e73d774e18e04893f618c59d826ce7e0f2af81872665d"
+      },
+      {
+        "path": "docs/images/reader.png",
+        "bytes": 121925,
+        "sha256": "4448dffb256ab88a5428402918033329bd3572f531eebb361e042e848a9f0e7f"
+      },
+      {
+        "path": "docs/images/settings.png",
+        "bytes": 175052,
+        "sha256": "38aece01b40ea7bca4a3eddaf41e6c2271878833247b3e359a3d28414470365b"
+      },
+      {
+        "path": "docs/images/today.png",
+        "bytes": 77288,
+        "sha256": "cbae3edf82ff9f99852052cbc5cc5112a1c3822f1bbe747c048e8f002b9243b2"
+      }
+    ]
+  },
+  "not_verified": [
+    "Docker运行",
+    "公网HTTPS部署",
+    "Windows实机",
+    "原生客户端",
+    "所有模型服务商",
+    "真实移动软键盘和屏幕阅读器"
+  ]
+}

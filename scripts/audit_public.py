@@ -36,7 +36,7 @@ def main():
             failures.append(name + ": 超过10MB，请核对发布必要性")
         if any(secret in raw for secret in secrets) or pattern.search(raw):
             failures.append(name + ": 发现疑似凭据值")
-        if b"/Users/" in raw and path.suffix not in {".png", ".gif"}:
+        if re.search(rb"/Users/[A-Za-z0-9._-]+/", raw) and path.suffix not in {".png", ".gif"}:
             failures.append(name + ": 本机绝对路径")
     if failures:
         raise RuntimeError("发布检查未通过：\n" + "\n".join(failures))

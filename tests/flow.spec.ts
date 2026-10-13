@@ -57,7 +57,11 @@ test("完整学习流程、真实页面导航与失败恢复（可控模型）",
   await page.getByRole("button", {name: "生成学习计划", exact: true}).click();
   await expect(page.getByRole("button", {name: "重新安排剩余内容", exact: true})).toBeVisible();
   await page.getByRole("button", {name: "今日学习", exact: true}).click();
+  await page.route("**/api/chunks/*", async route => {await route.abort("failed"); await page.unroute("**/api/chunks/*");});
   await page.locator(".task-row").first().click();
+  await expect(page.getByRole("alert")).toContainText("读取原文失败");
+  await page.getByRole("button", {name: "重试读取原文", exact: true}).click();
+  await expect(page.locator(".content-blocks")).toBeVisible();
   await page.getByRole("button", {name: "标记已读", exact: true}).click();
   await page.getByRole("button", {name: "今日学习", exact: true}).click();
   await expect(page.locator(".task-row .success")).toHaveCount(1);
@@ -69,6 +73,10 @@ test("完整学习流程、真实页面导航与失败恢复（可控模型）",
   await page.locator(".chat-dialog").getByRole("button", {name: "定位到原文"}).first().click();
   await expect(page.locator(".chat-dialog")).toHaveCount(0);
   await expect(page.locator(".content-blocks")).toContainText("增量备份复制");
+  const remembered = page.url();
+  await page.getByRole("button", {name: "资料库", exact: true}).first().click();
+  await page.getByRole("button", {name: "阅读", exact: true}).first().click();
+  await expect(page).toHaveURL(remembered);
   await page.getByRole("button", {name: "练习复习", exact: true}).click();
   await page.getByRole("button", {name: "生成练习题", exact: true}).click();
   await page.getByRole("button", {name: "生成并保存", exact: true}).click();

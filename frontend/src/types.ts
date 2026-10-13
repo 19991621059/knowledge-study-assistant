@@ -12,6 +12,7 @@ export interface Chunk {
   id: string; document_id: string; page: number; section: string; ordinal: number;
   completed: number; offset: number; favorite: number; text?: string;
   document_title?: string; format?: string;
+  updated_at?: string | null;
 }
 export interface Source {
   chunk_id: string; document_id?: string; document_title?: string; page: number;
