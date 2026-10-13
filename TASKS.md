@@ -13,7 +13,7 @@
 
 ## 自动化检查
 
-现场环境为macOS、Python3.14.6、Node26.0.0、Chrome155.0.8059.40。CI使用Python3.12/Node22/Chromium，远程结果在仓库Actions中独立查看。
+现场环境为macOS、Python3.14.6、Node26.0.0、Chrome155.0.8059.40。GitHub的Ubuntu/Python3.12/Node22/Chromium检查已通过，包含依赖安装、后端20项检查、生产构建及2条浏览器流程，见[源码提交616fb41的Actions结果](https://github.com/19991621059/knowledge-study-assistant/actions/runs/38457157373)。
 
 | 检查 | 实际结果 | 范围 |
 | --- | --- | --- |

@@ -25,7 +25,7 @@
 
 ## 本机安装：先用这一种
 
-准备 [Python](https://www.python.org/downloads/) **3.11或更新版本**、[Node.js](https://nodejs.org/en/download) **22.13或更新版本**、Git，以及浏览器。安装过程需要联网下载依赖；模型调用另需可用服务和你自己的密钥。浏览器不直接持有模型密钥。
+准备 [Python](https://www.python.org/downloads/) **3.11或更新版本**、[Node.js](https://nodejs.org/en/download) **22.13或更新版本**、Git，以及浏览器。安装过程需要联网下载依赖；模型调用另需可用服务和你自己的密钥。输入密钥时浏览器暂存表单内容，保存成功后清空；以后由后端读取已存密钥调用模型，不回填页面。
 
 ### macOS / Linux
 
