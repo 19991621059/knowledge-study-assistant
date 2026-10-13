@@ -1,0 +1,17 @@
+{
+  "repository": "https://github.com/19991621059/kouqiang-beikao",
+  "base_commit": "677516320c39e716b02a4fbb446d7fba193cdb4d",
+  "working_tree_snapshot": "2026-10-14",
+  "files": [
+    {
+      "source": "services/legacy-api/app/ai/provider.py",
+      "target": "backend/study_assistant/ai/provider.py",
+      "source_sha256": "bae85c1b48b4a0a13b0635af7403da3a8c5ea37dc705654394dc1bacd0a9b334"
+    },
+    {
+      "source": "packages/learning-ui/src/reader.tsx",
+      "target": "frontend/src/components/ContentBlocks.tsx",
+      "source_sha256": "7c142eb6b1d2a8f77f9b40584dbd0eb090c4a7f12148843d642a0e966121f0a2"
+    }
+  ]
+}

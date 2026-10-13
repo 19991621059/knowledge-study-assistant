@@ -1,0 +1,29 @@
+name: 检查学习流程
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          cache: npm
+      - run: python -m venv .venv
+      - run: .venv/bin/python -m pip install -r backend/requirements.lock
+      - run: .venv/bin/python -m pip install --no-deps -e backend
+      - run: .venv/bin/ruff check --config backend/pyproject.toml backend/study_assistant tests scripts
+      - run: .venv/bin/python -m pytest -c backend/pyproject.toml tests -q
+      - run: npm ci
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
+        env:
+          STUDY_BROWSER_CHANNEL: chromium

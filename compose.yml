@@ -1,0 +1,17 @@
+services:
+  study:
+    build: .
+    ports:
+      - "${STUDY_BIND:-127.0.0.1}:8000:8000"
+    environment:
+      STUDY_PASSWORD: "${STUDY_PASSWORD:?请在.env中设置至少12个字符的访问密码}"
+      STUDY_ORIGIN: "${STUDY_ORIGIN:-http://127.0.0.1:8000}"
+      STUDY_SECURE_COOKIE: "${STUDY_SECURE_COOKIE:-0}"
+      STUDY_TIMEZONE: "${STUDY_TIMEZONE:-Asia/Shanghai}"
+    volumes:
+      - study-data:/app/data
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+volumes:
+  study-data:
